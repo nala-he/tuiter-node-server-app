@@ -14,9 +14,9 @@ const createTuit = (req, res) => {
 const findTuits  = (req, res) => res.json(tuits);
 
 const updateTuit = (req, res) => {
-    const tuitdIdToUpdate = req.params.tid;
+    const tuitIdToUpdate = req.params.tid;
     const updates = req.body;
-    const tuitIndex = tuits.findIndex((t) => t._id.toString() === tuitdIdToUpdate)
+    const tuitIndex = tuits.findIndex((t) => t._id.toString() === tuitIdToUpdate)
     tuits[tuitIndex] = {...tuits[tuitIndex], ...updates};
     res.sendStatus(200);
 }
